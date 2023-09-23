@@ -12,12 +12,12 @@ function SignupForm() {
     <div className={styles.signUpForm}>
       <div>
         <h1 className={styles.heading}>Sign up</h1>
-        <div className>
-          have an account? <Link to="/">Login here</Link>{" "}
+        <div>
+          have an account? <Link to="/">Login here</Link>
         </div>
       </div>
       <form className={styles.form}>
-        <div className>
+        <div>
           <label htmlFor="Username">Username</label>
           <input
             type="text"

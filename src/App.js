@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Login from "./page/Login.js";
 import Signup from "./page/Signup.js";
 
@@ -12,5 +12,6 @@ function App() {
     </HashRouter>
   );
 }
+
 
 export default App;
