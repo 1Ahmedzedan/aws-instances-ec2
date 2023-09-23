@@ -9,7 +9,7 @@ function LoginForm(){
         <div className={styles.loginForm}>
             <div className={styles.title}>
                 <h1>Login</h1>
-                {/* <div>Don't have account? <Link to="/signup">Sign up here</Link> </div> */}
+                <div>Don't have account? <Link to="/signup">Sign up here</Link> </div>
             </div>
 
             <form>

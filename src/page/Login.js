@@ -5,7 +5,7 @@ function Login(){
     return (
         <div className={styles.login}>
             <LoginForm />
-            <img src="/img/login_img.svg" alt="login" className={styles.img}/>
+            <img src="img/login_img.svg" alt="login" className={styles.img}/>
         </div>
     ); 
 }
