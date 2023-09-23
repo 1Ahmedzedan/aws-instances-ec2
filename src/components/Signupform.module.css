@@ -1,0 +1,54 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+.signUpForm {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  font-size: 57px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  /*  align-items: center; */
+  justify-content: center;
+  gap: 30px;
+}
+
+.form div label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form div {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signUpForm form div input::placeholder {
+  text-align: center;
+}
+
+.form div input {
+  border-radius: 10px;
+  border: 2px solid #bdbdbdb7;
+  font-size: 18px;
+  padding: 8px 50px;
+}
+
+.btn {
+  width: 120px;
+  background: #00347d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 0px;
+}
