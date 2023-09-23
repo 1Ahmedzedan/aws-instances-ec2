@@ -1,6 +1,5 @@
 {
   "name": "project",
-  "homepage": "http://1Ahmedzedan.github.io/aws-instances-ec2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
