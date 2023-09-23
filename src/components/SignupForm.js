@@ -6,7 +6,7 @@ function SignupForm() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = "";
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
     <div className={styles.signUpForm}>
