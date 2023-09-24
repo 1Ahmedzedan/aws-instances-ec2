@@ -18,7 +18,7 @@ function SignupForm() {
       </div>
       <form className={styles.form}>
         <div>
-          <label htmlFor="Username">Username</label>
+          <label htmlFor="userName">Username</label>
           <input
             type="text"
             name="userName"
@@ -29,7 +29,7 @@ function SignupForm() {
           />
         </div>
         <div>
-          <label htmlFor="Email">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
             name="email"
@@ -40,7 +40,7 @@ function SignupForm() {
           />
         </div>
         <div>
-          <label htmlFor="Password">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
@@ -51,7 +51,7 @@ function SignupForm() {
           />
         </div>
         <div>
-          <label htmlFor="PasswordConfirm"> Password Confirm</label>
+          <label htmlFor="passwordConfirm"> Password Confirm</label>
           <input
             type="password"
             name="passwordConfirm"
