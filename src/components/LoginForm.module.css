@@ -52,6 +52,7 @@
     padding: 10px 0px;
     color: white;
     font-size: 18px;
+    cursor: pointer;
 }
 
 @media (max-width:400px){
@@ -89,4 +90,12 @@
         padding: 8px 0px;
         font-size: 15px;
     }    
+}
+
+@media (max-width:251px){
+    .loginForm form div input{
+        border-radius : 5px;
+        padding: 5px 8px;
+        font-size: 10px;
+    }
 }

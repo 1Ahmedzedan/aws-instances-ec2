@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
 
+
 .signUpForm {
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -7,10 +8,13 @@
   gap: 40px;
 }
 
+
 .heading {
   font-size: 57px;
   font-weight: bold;
 }
+
+
 
 .form {
   display: flex;
@@ -33,9 +37,12 @@
   width: 100%;
 }
 
+
+
 .signUpForm form div input::placeholder {
   text-align: center;
 }
+
 
 .form div input {
   border-radius: 10px;
@@ -43,6 +50,7 @@
   font-size: 18px;
   padding: 8px 50px;
 }
+
 
 .btn {
   width: 120px;
@@ -52,7 +60,9 @@
   border-radius: 10px;
   font-size: 18px;
   padding: 10px 0px;
+  cursor: pointer;
 }
+
 
 @media (max-width: 400px) {
   .signUpForm {
@@ -89,4 +99,33 @@
   .title {
     font-size: 12px;
   }
+}
+
+@media (max-width: 251px) {
+  .signUpForm {
+    gap: 20px;
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .form div label {
+    font-size: 15px;
+  }
+
+  .form div {
+    gap: 10px;
+  }
+
+  .form div label {
+    font-size: 12px;
+  }
+  
+  .form div input {
+    font-size: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+  }
+  
 }
