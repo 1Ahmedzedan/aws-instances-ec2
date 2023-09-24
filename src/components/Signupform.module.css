@@ -64,7 +64,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 601px) {
   .signUpForm {
     gap: 30px;
     padding: 12px;

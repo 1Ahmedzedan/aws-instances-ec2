@@ -55,7 +55,7 @@
     cursor: pointer;
 }
 
-@media (max-width:400px){
+@media (max-width:601px){
     .loginForm{
         gap : 30px ; 
     }
