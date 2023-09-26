@@ -1,4 +1,4 @@
-import SignupForm from "../components/SignupForm";
+import SignupForm from "../components/SignupForm.jsx";
 import styles from "./signup.module.css";
 
 function Signup() {

@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/LoginForm.jsx";
 import styles from "./login.module.css" ; 
 
 function Login(){
