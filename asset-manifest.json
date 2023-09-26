@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/aws-instances-ec2/static/css/main.1ad15293.css",
+    "main.css": "/aws-instances-ec2/static/css/main.1bd86392.css",
     "main.js": "/aws-instances-ec2/static/js/main.1b67d40d.js",
     "index.html": "/aws-instances-ec2/index.html",
-    "main.1ad15293.css.map": "/aws-instances-ec2/static/css/main.1ad15293.css.map",
+    "main.1bd86392.css.map": "/aws-instances-ec2/static/css/main.1bd86392.css.map",
     "main.1b67d40d.js.map": "/aws-instances-ec2/static/js/main.1b67d40d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ad15293.css",
+    "static/css/main.1bd86392.css",
     "static/js/main.1b67d40d.js"
   ]
 }
