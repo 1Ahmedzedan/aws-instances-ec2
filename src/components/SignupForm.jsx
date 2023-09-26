@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./SignForm.module.css";
+import Button from "../components/Button.jsx";
 import { Link } from "react-router-dom";
 
 
@@ -222,7 +223,7 @@ function SignupForm() {
             }
           </div>
         </div>
-        <button className={styles.btn}>Submit</button>
+        <Button className={styles.btn}>Submit</Button>
       </form>
     </div>
   );

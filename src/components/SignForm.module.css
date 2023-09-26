@@ -80,22 +80,6 @@
     text-align: center;
 }
 
-.loginForm form button{
-    background: #00347D;
-    border: none;
-    border-radius: 10px ;
-    width: 120px;
-    padding: 10px 0px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.loginForm form button:hover{
-    transform: scale(1.1);
-}
-
-
 @media (max-width:601px){
     .loginForm{
         gap : 30px ; 
@@ -124,13 +108,7 @@
     .loginForm form div .input input{
         padding: 5px 30px;
         font-size: 12px;
-    }
-
-    .loginForm form button{
-        width: 100px;
-        padding: 8px 0px;
-        font-size: 15px;
-    }    
+    }   
 
     .input{
         max-width: 216px;

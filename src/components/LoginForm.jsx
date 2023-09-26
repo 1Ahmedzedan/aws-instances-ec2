@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from "./SignForm.module.css" ; 
+import styles from "./SignForm.module.css" ;
+import Button from "../components/Button.jsx" 
 import { useState } from "react";
 
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
@@ -7,6 +8,7 @@ const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
 function LoginForm(){
     const [username , setUserName] = useState("")  ; 
     const [password , setPassword] = useState("")  ; 
+    
     const [usernameValidMassege , setUsernameValidMassege] = useState("") ; 
     const [passwordValidMassege , setpasswordValidMassege] = useState("") ; 
     const [isSubmited , setIsSubmited] = useState(0) ; 
@@ -106,9 +108,9 @@ function LoginForm(){
                         onClick={()=>setShowPassword((e)=>!e)}/>}
                     </div>
                 </div>
-                <button>
+                <Button>
                     Login
-                </button>
+                </Button>
             </form>
         </div>
     );

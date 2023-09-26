@@ -1,0 +1,64 @@
+.filter{
+    display: flex ;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center ;
+    flex-wrap: wrap;
+    gap : 20px ; 
+    width: 100%;
+}
+
+.checkBoxes{
+    display: flex;
+    justify-content: center ;
+    align-items: center ;
+    flex-wrap: wrap;
+    gap : 20px ; 
+
+}
+
+.title{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.check{
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px ;
+    width: 120px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.check p{
+    line-height: 1px;
+    font-weight:initial !important;
+}
+.check img{
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width:800px) {
+    .check{
+        width: 80px;
+        font-size: 10px;
+        padding: 5px 0px;
+        border-radius: 5px ;
+    }
+
+    .check img{
+        width: 8px;
+        height: 8px;
+    }
+
+    .checkBoxes{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center ;
+        align-items: center ;
+    
+    }
+}
