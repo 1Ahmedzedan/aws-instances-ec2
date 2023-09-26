@@ -34,7 +34,8 @@
     font-weight: bold;
 }
 
-.loginForm form div .input input{
+.loginForm form div .input input[type="text"],
+.loginForm form div .input input[type="password"]{
     padding: 8px 50px;
     border-radius: 10px;
     border: 2px solid #bdbdbdb7; 
@@ -105,7 +106,9 @@
         font-size: 15px;
     }
     
-    .loginForm form div .input input{
+    .loginForm form div .input input[type="text"],
+    .loginForm form div .input input[type="password"]
+    {
         padding: 5px 30px;
         font-size: 12px;
     }   
