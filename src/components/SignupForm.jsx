@@ -102,7 +102,7 @@ function SignupForm() {
       <div className={styles.title}>
         <h1>Sign up</h1>
         <div>
-          have an account? <Link to="/">Login here</Link>
+          have an account? <Link to="/login">Login here</Link>
         </div>
       </div>
       
