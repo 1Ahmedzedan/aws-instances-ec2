@@ -13,7 +13,7 @@ function SignupForm() {
       <div>
         <h1 className={styles.heading}>Sign up</h1>
         <div className={styles.title}>
-          have an account? <Link to="/">Login here</Link>
+          have an account? <Link to="/login">Login here</Link>
         </div>
       </div>
       <form className={styles.form}>
