@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignForm.module.css" ;
 import Button from "../components/Button.jsx" 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
-
+const USER_NAME = "user1" ; 
+const PASSWORD = "H12345678" ;
 function LoginForm(){
+    const navigate = useNavigate();
+
     const [username , setUserName] = useState("")  ; 
     const [password , setPassword] = useState("")  ; 
     
@@ -14,7 +17,7 @@ function LoginForm(){
     const [isSubmited , setIsSubmited] = useState(0) ; 
     const [showPassword , setShowPassword] = useState(false) ; 
 
-    function validationForm(){
+    async function validationForm(){
         if(username.length===0){
             setUsernameValidMassege("you should fill your  account username") ; 
             setIsSubmited(1) ; 
@@ -44,11 +47,38 @@ function LoginForm(){
             setpasswordValidMassege("") ; 
             setIsSubmited(2) ; 
         }
+        // console.log(isSubmited) ; 
     }
+
+    useEffect(function(){
+        if(isSubmited!==2) return;
+
+        if(isSubmited===2){
+            if(username !== USER_NAME){
+                setIsSubmited(1) ; 
+                setUsernameValidMassege("not found this user name!") ;
+                setpasswordValidMassege("your user name is wrong!") 
+                return ; 
+            }
+
+            if(password !== PASSWORD){
+                setIsSubmited(1) ; 
+                setUsernameValidMassege("") ;
+                setpasswordValidMassege("this password not match with user name password!") ; 
+                return ; 
+            }
+
+            setUsernameValidMassege("") ;
+            setpasswordValidMassege("") ; 
+            navigate("/mainpage") ; 
+        }
+
+    } , [isSubmited , password , username , navigate])
 
     function handleSubmit(e){
         e.preventDefault() ; 
         validationForm() ; 
+        // console.log(isSubmited) ; 
     }
 
     return(
