@@ -10,8 +10,7 @@
   gap: 40px;
 }
 
-.title {
-  font-weight: bold;
+.heading h1 {
   font-size: 44px;
 }
 
@@ -21,14 +20,8 @@
   font-size: 18px;
 }
 
-.btn {
-  background: #00347d;
-  border: none;
-  border-radius: 10px;
-  width: 95px;
-  padding: 10px 0px;
-  color: white;
-  font-size: 16px;
+.msg h4{
+  font-weight:initial;
 }
 
 .btns {
@@ -44,12 +37,19 @@
   gap: 20px;
 }
 
+.msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 601px) {
   .heading {
     gap: 20px;
   }
 
-  .title {
+  .heading h1  {
     font-size: 25px;
     padding-left: 30px;
     padding-right: 30px;

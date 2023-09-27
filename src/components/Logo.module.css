@@ -1,0 +1,9 @@
+.logo{
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.logo img{
+    width: 40px;
+    height: 30px;
+}

@@ -4,9 +4,17 @@
   width: 100%;
 
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap : 50px
+}
+
+.main{
+  display: flex;
   flex-wrap: wrap-reverse;
   justify-content: space-evenly;
   align-items: center;
+
 }
 
 .img {
@@ -14,9 +22,13 @@
   max-height: 450px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .img {
     width: 400px;
     height: 215px;
+  }
+
+  .main{
+    gap : 100px ; 
   }
 }
