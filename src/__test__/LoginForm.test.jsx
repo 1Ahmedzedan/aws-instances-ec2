@@ -15,15 +15,15 @@ test("render sign up form fieldes" , ()=>{
     expect(LoginBtn).toBeInTheDocument() ; 
 });
 
-// test("login state update", ()=>{
-//     render(<MemoryRouter><LoginForm/></MemoryRouter>) ;
+test("login state update", ()=>{
+    render(<MemoryRouter><LoginForm/></MemoryRouter>) ;
 
-//     const UserNameInput = screen.getByPlaceholderText("Enter your username") ;
-//     const PasswordInput = screen.getByPlaceholderText("Enter your password") ;
+    const UserNameInput = screen.getByPlaceholderText("Enter your username") ;
+    const PasswordInput = screen.getByPlaceholderText("Enter your password") ;
 
-//     fireEvent.change(UserNameInput , { target: { value: "noran" } }) ; 
-//     fireEvent.change(PasswordInput , { target: { value: "12345678" } }) ; 
+    fireEvent.change(UserNameInput , { target: { value: "noran" } }) ; 
+    fireEvent.change(PasswordInput , { target: { value: "12345678" } }) ; 
 
-//     expect(UserNameInput.value).toBe('noran') ; 
-//     expect(PasswordInput.value).toBe('12345678') ; 
-// });
+    expect(UserNameInput.value).toBe('noran') ; 
+    expect(PasswordInput.value).toBe('12345678') ; 
+});
