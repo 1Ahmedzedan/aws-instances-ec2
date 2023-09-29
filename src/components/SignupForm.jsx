@@ -107,7 +107,7 @@ function SignupForm() {
       </div>
       
       <form onSubmit={(e)=>handleFormSubmit(e)}>
-        {/* <div>
+        <div>
           <label htmlFor="userName">Username</label>
           <div className={styles.input}>
             <input
@@ -127,7 +127,7 @@ function SignupForm() {
                 </>
             }
           </div>
-        </div> */}
+        </div>
         <div>
           <label htmlFor="email">Email</label>
           <div className={styles.input}>
