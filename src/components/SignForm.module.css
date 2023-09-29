@@ -1,0 +1,143 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+.loginForm{
+    display: flex ;
+    flex-direction: column;
+    gap : 40px ; 
+    font-family: Poppins;
+    /* min-height: 536px; */
+}
+
+.title h1{
+    font-size: 57px;
+    font-weight:  bold;
+}
+
+.loginForm form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.loginForm form div{
+    width: 100%;
+    display: flex;
+    gap : 20px ; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginForm form div label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.loginForm form div .input input[type="text"],
+.loginForm form div .input input[type="password"]{
+    padding: 8px 50px;
+    border-radius: 10px;
+    border: 2px solid #bdbdbdb7; 
+    font-size: 18px;
+}
+
+
+.input{
+    max-width: 322px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input small{
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    font-size: 12px;
+    color: red;
+}
+
+.input img{
+    position: absolute;
+    right: -20px;
+    top: 30%;
+}
+
+.input .hide_show{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+}
+.error{
+    border: 1px solid red !important;
+}
+
+.succes{
+    border: 1px solid green !important;
+}
+
+.loginForm form div .input input::placeholder{
+    text-align: center;
+}
+
+@media (max-width:601px){
+    .loginForm{
+        gap : 30px ; 
+    }
+    
+    .title h1{
+        font-size: 35px;
+    }
+
+    .title div {
+        font-size: 12px;
+    }
+    
+    .loginForm form{
+        gap: 20px;
+    }
+    
+    .loginForm form div{
+        gap : 30px ; 
+    }
+    
+    .loginForm form div label{
+        font-size: 15px;
+    }
+    
+    .loginForm form div .input input[type="text"],
+    .loginForm form div .input input[type="password"]
+    {
+        padding: 5px 30px;
+        font-size: 12px;
+    }   
+
+    .input{
+        max-width: 216px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .input small{
+        position: absolute;
+        bottom: -15px;
+        left: 5px;
+        font-size: 10px;
+        color: red;
+    }
+    
+    .input img{
+        position: absolute;
+        right: -20px;
+        top: 20%;
+    }
+    
+    .input .hide_show{
+        position: absolute;
+        right: 10px;
+        top: 20%;
+    }
+    
+}
