@@ -153,7 +153,7 @@ function SignupForm() {
           <label htmlFor="password">Password</label>
           <div className={styles.input}>
             <input
-              type={showPassword?"type":"password"}
+              type={showPassword?"text":"password"}
               name="password"
               id="password"
               placeholder="Enter your password"
@@ -180,7 +180,7 @@ function SignupForm() {
           <label htmlFor="passwordConfirm"> Password<br/>Confirm</label>
           <div className={styles.input}>
             <input
-              type={showPassword?"type":"password"}
+              type={showPassword?"text":"password"}
               name="passwordConfirm"
               id="passwordConfirm"
               placeholder="confirm your password"

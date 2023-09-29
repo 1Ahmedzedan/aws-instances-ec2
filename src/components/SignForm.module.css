@@ -141,11 +141,3 @@
     }
     
 }
-
-@media (max-width:251px){
-    .loginForm form div .input input{
-        border-radius : 5px;
-        padding: 5px 8px;
-        font-size: 10px;
-    }
-}

@@ -53,10 +53,20 @@
     border-bottom: 1px solid #ddd;
 }
 /* ================================================= */
+
+@media (max-width:1201px){
+    .mainRow th, .mainRow td,
+    .detailRow th, .detailRow td {
+        padding: 16px 28px;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
 @media(max-width:800px){
     .mainRow th, .mainRow td,
     .detailRow th, .detailRow td {
-        padding: 6px 6px;
+        padding: 6px 3px;
         font-size: 8px;
         text-align: center;
     }
@@ -67,4 +77,3 @@
         height: 8px;
     }
 }
-

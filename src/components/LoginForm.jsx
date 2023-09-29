@@ -78,7 +78,6 @@ function LoginForm(){
     function handleSubmit(e){
         e.preventDefault() ; 
         validationForm() ; 
-        // console.log(isSubmited) ; 
     }
 
     return(

@@ -12,12 +12,20 @@
     height: 30px;
 }
 
+@media(max-width: 1601px){
+    .header{
+        justify-content: space-around;
+        gap: 80px ;
+    }
+}
+
 @media(max-width: 1100px){
     .header{
         justify-content: space-around;
         gap: 200px ;
     }
 }
+
 
 @media(max-width: 700px){
     .header{
