@@ -73,7 +73,7 @@ function LoginForm(){
             navigate("/mainpage") ; 
         }
 
-    } , [isSubmited , password , username , navigate])
+    } , [isSubmited , password , username , navigate]) 
 
     function handleSubmit(e){
         e.preventDefault() ; 
