@@ -24,18 +24,19 @@ function SignupForm() {
 
 
   useEffect(function(){
-    validConfirmPass() ;  
+    function validConfirmPass(){
+      if(!password || !confirmPassword) return ; 
+      if(password!==confirmPassword){
+        setConfirmPasswordValidMassege("not match password") ;
+      }
+      else{
+        setConfirmPasswordValidMassege("matched password") ;
+      }
+    }  
+    validConfirmPass() ; 
   } , [confirmPassword, password, setConfirmPasswordValidMassege]);
 
-  function validConfirmPass(){
-    if(!password || !confirmPassword) return ; 
-    if(password!==confirmPassword){
-      setConfirmPasswordValidMassege("not match password") ;
-    }
-    else{
-      setConfirmPasswordValidMassege("matched password") ;
-    }
-  }
+
 
 
 
