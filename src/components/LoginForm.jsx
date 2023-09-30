@@ -53,26 +53,23 @@ function LoginForm(){
     useEffect(function(){
         if(isSubmited!==2) return;
 
-        if(isSubmited===2){
-            if(username !== USER_NAME){
-                setIsSubmited(1) ; 
-                setUsernameValidMassege("not found this user name!") ;
-                setpasswordValidMassege("your user name is wrong!") 
-                return ; 
-            }
-
-            if(password !== PASSWORD){
-                setIsSubmited(1) ; 
-                setUsernameValidMassege("") ;
-                setpasswordValidMassege("this password not match with user name password!") ; 
-                return ; 
-            }
-
-            setUsernameValidMassege("") ;
-            setpasswordValidMassege("") ; 
-            navigate("/mainpage") ; 
+        if(username !== USER_NAME){
+            setIsSubmited(1) ; 
+            setUsernameValidMassege("not found this user name!") ;
+            setpasswordValidMassege("your user name is wrong!") 
+            return ; 
         }
 
+        if(password !== PASSWORD){
+            setIsSubmited(1) ; 
+            setUsernameValidMassege("") ;
+            setpasswordValidMassege("this password not match with user name password!") ; 
+            return ; 
+        }
+
+        setUsernameValidMassege("") ;
+        setpasswordValidMassege("") ; 
+        navigate("/mainpage") ; 
     } , [isSubmited , password , username , navigate]) 
 
     function handleSubmit(e){
