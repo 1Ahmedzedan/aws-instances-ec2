@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SignForm.module.css";
 import Button from "../components/Button.jsx";
 import { Link } from "react-router-dom";
@@ -21,6 +21,25 @@ function SignupForm() {
   const [genderValidMassege , setGenderValidMassege] = useState("") ; 
   const [isSubmited , setIsSubmited] = useState(0) ; 
   const [showPassword , setShowPassword] = useState(false) ; 
+
+
+  useEffect(function(){
+    function validConfirmPass(){
+      if(!password || !confirmPassword) return ; 
+      if(password!==confirmPassword){
+        setConfirmPasswordValidMassege("not match password") ;
+      }
+      else{
+        setConfirmPasswordValidMassege("matched password") ;
+      }
+    }  
+    validConfirmPass() ; 
+  } , [confirmPassword, password, setConfirmPasswordValidMassege]);
+
+
+
+
+
 
   function validationForm(){
       if(username.length===0){
@@ -163,7 +182,7 @@ function SignupForm() {
               onChange={(e) => setPassword(e.target.value)}
               className={isSubmited?passwordValidMassege?styles.error:styles.succes:""}
             />
-            {isSubmited!==0&&
+            {isSubmited!==0 &&
                   <>
                       <small>{passwordValidMassege}</small>
                       {passwordValidMassege && <img src="img/cross.png" alt="cross"/>}
@@ -190,9 +209,10 @@ function SignupForm() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               className={isSubmited?confirmPasswordValidMassege?styles.error:styles.succes:""}
             />
-            {isSubmited!==0&&
+            {confirmPasswordValidMassege==="matched password" && <img src="img/approved.png" alt="approved"/>}
+            {(isSubmited!==0 || confirmPasswordValidMassege==="not match password")&&
                   <>
-                      <small>{confirmPasswordValidMassege}</small>
+                     { <small>{confirmPasswordValidMassege}</small>}
                       {confirmPasswordValidMassege && <img src="img/cross.png" alt="cross"/>}
                       {!confirmPasswordValidMassege && <img src="img/approved.png" alt="approved"/>}
                   </>
@@ -205,7 +225,7 @@ function SignupForm() {
             onClick={()=>setShowPassword((e)=>!e)}/>}
 
           </div>
-        </div> 
+        </div>  
 
         <div>
           <label>Gender</label>
