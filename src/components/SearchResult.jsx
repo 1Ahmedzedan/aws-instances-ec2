@@ -5,7 +5,7 @@ function SearchResult({filterValue}){
   const{showStorage , showMemory , showCpu , showNetwork , showOS} = filterValue ;
   return (
     <div className="searchResult">
-      <table class={styles.mainTable}>
+      <table data-testid="select table" class={styles.mainTable}>
 
         <Trow>
           <th>Instance</th>
