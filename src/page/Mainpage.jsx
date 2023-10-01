@@ -1,8 +1,11 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import Filter from '../components/Filter';
 import Header from '../components/Header';
 import SearchResult from '../components/SearchResult';
 import styles from './Mainpage.module.css' ; 
+import { Link } from 'react-router-dom';
+import Button from '../components/Button.jsx';
+import SearchForm from '../components/SearchForm.jsx' ;
 
 function reducer(state , action){
   switch(action.type){
@@ -48,13 +51,18 @@ const intialState={
 
 function Mainpage(){
   const [state , dispatch] = useReducer(reducer , intialState) ; 
+  const [searchResult , setSearchResult] = useState() ; 
   return (
     <div className={styles.Mainpage}>
       <div className={styles.headerControl}>
-        <Header/>
+        <Header>
+          <img src="img/awslogo.svg" alt="logo"/>
+          <SearchForm setSearchResult={setSearchResult}/>
+          <Link to="/"><Button>Log out</Button></Link>
+        </Header>
         <Filter handleFilter={dispatch} filterValue={state}/>
       </div>
-      <SearchResult filterValue={state}/>
+      <SearchResult filterValue={state} searchResult={searchResult}/>
     </div>
   );
 }

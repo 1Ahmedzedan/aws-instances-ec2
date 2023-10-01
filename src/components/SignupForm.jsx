@@ -3,11 +3,12 @@ import styles from "./SignForm.module.css";
 import Button from "../components/Button.jsx";
 import { Link } from "react-router-dom";
 
-
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
 const EMAIL_REGULAR_EXPRESSION = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/ ;
+const BASE_URL = "51.20.78.156" ; 
 
 function SignupForm() {
+
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,12 +20,12 @@ function SignupForm() {
   const [passwordValidMassege , setpasswordValidMassege] = useState("") ; 
   const [confirmPasswordValidMassege , setConfirmPasswordValidMassege] = useState("") ; 
   const [genderValidMassege , setGenderValidMassege] = useState("") ; 
+  // 0: not submit , 1:submit with error , 2: ready post data to api 
   const [isSubmited , setIsSubmited] = useState(0) ; 
   const [showPassword , setShowPassword] = useState(false) ; 
 
-
+  // when update confirm password field 
   useEffect(function(){
-    function validConfirmPass(){
       if(!password || !confirmPassword) return ; 
       if(password!==confirmPassword){
         setConfirmPasswordValidMassege("not match password") ;
@@ -32,15 +33,37 @@ function SignupForm() {
       else{
         setConfirmPasswordValidMassege("matched password") ;
       }
-    }  
-    validConfirmPass() ; 
   } , [confirmPassword, password, setConfirmPasswordValidMassege]);
 
 
+  // post user data to API
+  useEffect(function(){
+    if(isSubmited!==2) return ; 
+    async function fetchDataSignup(){
+      const User = {
+        username,
+        password,
+        email,
+        gender
+      };
 
 
+      const res = await fetch(`${BASE_URL}/signup` , {
+        method: "POST",
+        body: JSON.stringify(User)
+      }); 
+
+      const data = await res.json() ; 
+
+      // cases:
+      // 1) email / user name register before
+      // 2) signup successfully 
+    }
+    fetchDataSignup() ; 
+  },[isSubmited , email , password , username , gender]);
 
 
+  // validation signup form
   function validationForm(){
       if(username.length===0){
           setUsernameValidMassege("you should fill your  account username") ; 
@@ -77,7 +100,7 @@ function SignupForm() {
           setIsSubmited(1) ; 
       }
       else if(!PASSWORD_REGULAR_EXPRESSION.test(password)){
-          setpasswordValidMassege("password should mix of letter and numbers") ; 
+          setpasswordValidMassege("password should mix of letters and numbers") ; 
           setIsSubmited(1) ; 
       }
       else{
@@ -95,7 +118,7 @@ function SignupForm() {
       }
       else {
         setConfirmPasswordValidMassege("") ;
-        setIsSubmited(1) ;
+        setIsSubmited(2) ;
       }
 
       if(gender.length===0){
@@ -109,7 +132,7 @@ function SignupForm() {
 
   }
 
-
+  // when user submit your data 
   function handleFormSubmit(e){
     e.preventDefault(); 
     validationForm() ;
@@ -126,6 +149,7 @@ function SignupForm() {
       </div>
       
       <form onSubmit={(e)=>handleFormSubmit(e)}>
+
         <div>
           <label htmlFor="userName">Username</label>
           <div className={styles.input}>
@@ -169,6 +193,7 @@ function SignupForm() {
             }
           </div>
         </div>
+
         <div>
           <label htmlFor="password">Password</label>
           <div className={styles.input}>
@@ -196,6 +221,7 @@ function SignupForm() {
             onClick={()=>setShowPassword((e)=>!e)}/>}
           </div>
         </div>
+
         <div>
           <label htmlFor="passwordConfirm"> Password<br/>Confirm</label>
           <div className={styles.input}>
@@ -244,6 +270,7 @@ function SignupForm() {
             }
           </div>
         </div>
+
         <Button className={styles.btn}>Submit</Button>
       </form>
     </div>

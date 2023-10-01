@@ -4,19 +4,24 @@ import Button from "../components/Button.jsx"
 import { useEffect, useState } from "react";
 
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
+const BASE_URL = "51.20.78.156" ; 
 const USER_NAME = "user1" ; 
 const PASSWORD = "H12345678" ;
+
+
 function LoginForm(){
     const navigate = useNavigate();
-
+    
     const [username , setUserName] = useState("")  ; 
     const [password , setPassword] = useState("")  ; 
     
     const [usernameValidMassege , setUsernameValidMassege] = useState("") ; 
     const [passwordValidMassege , setpasswordValidMassege] = useState("") ; 
+    // 0: not submit , 1:submit with error , 2: ready post data to api 
     const [isSubmited , setIsSubmited] = useState(0) ; 
     const [showPassword , setShowPassword] = useState(false) ; 
 
+    //validation login form
     async function validationForm(){
         if(username.length===0){
             setUsernameValidMassege("you should fill your  account username") ; 
@@ -47,31 +52,32 @@ function LoginForm(){
             setpasswordValidMassege("") ; 
             setIsSubmited(2) ; 
         }
-        // console.log(isSubmited) ; 
     }
 
+
     useEffect(function(){
-        if(isSubmited!==2) return;
+        if(isSubmited!==2) return ; 
+        async function fetchDatalogin(){
+            const User = {
+                username,
+                password,
+            };
+            const res = await fetch(`${BASE_URL}/login`,{
+                method: "POST" ,
+                body: JSON.stringify(User),
+            }) ; 
+            const data = await res.json() ; 
 
-        if(username !== USER_NAME){
-            setIsSubmited(1) ; 
-            setUsernameValidMassege("not found this user name!") ;
-            setpasswordValidMassege("your user name is wrong!") 
-            return ; 
+
+            //cases : 
+            // 1) user name not found 
+            // 2) password entered not match with user name password 
+            // 3) successful login and enter to main page             
         }
-
-        if(password !== PASSWORD){
-            setIsSubmited(1) ; 
-            setUsernameValidMassege("") ;
-            setpasswordValidMassege("this password not match with user name password!") ; 
-            return ; 
-        }
-
-        setUsernameValidMassege("") ;
-        setpasswordValidMassege("") ; 
-        navigate("/mainpage") ; 
+        fetchDatalogin() ; 
     } , [isSubmited , password , username , navigate]) 
 
+    // when user submited
     function handleSubmit(e){
         e.preventDefault() ; 
         validationForm() ; 
