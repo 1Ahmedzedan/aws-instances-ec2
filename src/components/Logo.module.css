@@ -1,9 +1,15 @@
 .logo{
     width: calc(100% - 20px);
     padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo img{
+.logoImg{
     width: 40px;
     height: 30px;
+    cursor: pointer;
+    /* filter: invert(100%); */
 }

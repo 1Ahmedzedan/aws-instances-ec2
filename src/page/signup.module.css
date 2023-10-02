@@ -1,6 +1,7 @@
 .signUp{
-  background: #D5E9FF; 
-  height: 100vh;
+  background: var(--bg-color); 
+  color: var(--text-color);
+  min-height: 100vh;
   width: 100%;
 
   display: flex;

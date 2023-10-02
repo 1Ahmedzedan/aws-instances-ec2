@@ -6,6 +6,10 @@ import styles from './Mainpage.module.css' ;
 import { Link } from 'react-router-dom';
 import Button from '../components/Button.jsx';
 import SearchForm from '../components/SearchForm.jsx' ;
+import {instances} from "../Data.js" ; 
+import DarkMode from '../components/DarkMode';
+import { useApp } from '../context/AppProvider';
+
 
 function reducer(state , action){
   switch(action.type){
@@ -50,15 +54,17 @@ const intialState={
 
 
 function Mainpage(){
+  const {dark} = useApp() ; 
   const [state , dispatch] = useReducer(reducer , intialState) ; 
-  const [searchResult , setSearchResult] = useState() ; 
+  const [searchResult , setSearchResult] = useState(instances) ; 
   return (
     <div className={styles.Mainpage}>
       <div className={styles.headerControl}>
         <Header>
-          <img src="img/awslogo.svg" alt="logo"/>
+          <img src="img/awslogo.svg" alt="logo" style={dark ? {filter:"invert(100%)"} : {}}/>
           <SearchForm setSearchResult={setSearchResult}/>
           <Link to="/"><Button>Log out</Button></Link>
+          <DarkMode/> 
         </Header>
         <Filter handleFilter={dispatch} filterValue={state}/>
       </div>

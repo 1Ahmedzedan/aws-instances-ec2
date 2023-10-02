@@ -1,3 +1,15 @@
+:root{
+  --bg-color: #d5e9ff;
+  --btn-color: #00347D ; 
+  --text-color: black ; 
+}
+
+[data-theme="dark"]{
+  --bg-color: #282c34;
+  --btn-color: #00347D ; 
+  --text-color: white ;
+}
+
 *{
   margin: 0;
 }
@@ -13,4 +25,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a{
+  color: var(--text-color);
+  text-decoration: underline ; 
 }

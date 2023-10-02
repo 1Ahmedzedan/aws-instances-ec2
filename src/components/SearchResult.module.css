@@ -2,6 +2,7 @@
     text-align: center;
     border-collapse: collapse;
     width: 100%;
+    color: black !important;
 }
 
 .mainTable .mainRow:nth-child(odd){
@@ -9,7 +10,7 @@
 }
 
 .mainTable .mainRow:nth-child(even){
-    background: rgba(0, 52, 125, 0.25);
+    background: #568FD8;
 }
 
 .mainRow th{
@@ -38,12 +39,12 @@
 
 
 .detailRow th{
-    background: rgba(26, 26, 26, 0.65) !important;
+    background: #5B626A !important;
     color : white ;     
 }
 
 .detailRow td{
-    background: rgba(163, 163, 163, 0.7) ; 
+    background: #B1B7BE ; 
 }
 
 
@@ -53,7 +54,13 @@
     border-bottom: 1px solid #ddd;
 }
 /* ================================================= */
-
+.btns{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px ;
+}
+/* ================================================= */
 @media (max-width:1201px){
     .mainRow th, .mainRow td,
     .detailRow th, .detailRow td {
