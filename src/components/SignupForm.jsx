@@ -37,30 +37,30 @@ function SignupForm() {
 
 
   // post user data to API
-  useEffect(function(){
-    if(isSubmited!==2) return ; 
-    async function fetchDataSignup(){
-      const User = {
-        username,
-        password,
-        email,
-        gender
-      };
+  // useEffect(function(){
+  //   if(isSubmited!==2) return ; 
+  //   async function fetchDataSignup(){
+  //     const User = {
+  //       username,
+  //       password,
+  //       email,
+  //       gender
+  //     };
 
 
-      const res = await fetch(`${BASE_URL}/signup` , {
-        method: "POST",
-        body: JSON.stringify(User)
-      }); 
+  //     const res = await fetch(`${BASE_URL}/signup` , {
+  //       method: "POST",
+  //       body: JSON.stringify(User) ,
+  //     }); 
 
-      const data = await res.json() ; 
+  //     const data = await res.json() ; 
 
-      // cases:
-      // 1) email / user name register before
-      // 2) signup successfully 
-    }
-    fetchDataSignup() ; 
-  },[isSubmited , email , password , username , gender]);
+  //     // cases:
+  //     // 1) email / user name register before
+  //     // 2) signup successfully 
+  //   }
+  //   fetchDataSignup() ; 
+  // },[isSubmited , email , password , username , gender]);
 
 
   // validation signup form

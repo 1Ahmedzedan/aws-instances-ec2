@@ -4,9 +4,6 @@ import Button from "../components/Button.jsx"
 import { useEffect, useState } from "react";
 
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
-const BASE_URL = "51.20.78.156" ; 
-const USER_NAME = "user1" ; 
-const PASSWORD = "H12345678" ;
 
 
 function LoginForm(){
@@ -55,28 +52,34 @@ function LoginForm(){
     }
 
 
+    // useEffect(function(){
+    //     if(isSubmited!==2) return ; 
+    //     async function fetchDatalogin(){
+    //         const User = {
+    //             username,
+    //             password,
+    //         };
+    //         const res = await fetch(`${BASE_URL}/login`,{
+    //             method: "POST" ,
+    //             body: JSON.stringify(User),
+    //         }) ; 
+    //         const data = await res.json() ; 
+
+
+    //         //cases : 
+    //         // 1) user name not found 
+    //         // 2) password entered not match with user name password 
+    //         // 3) successful login and enter to main page             
+    //     }
+    //     fetchDatalogin() ; 
+    // } , [isSubmited , password , username , navigate]) ;
+
     useEffect(function(){
-        if(isSubmited!==2) return ; 
-        async function fetchDatalogin(){
-            const User = {
-                username,
-                password,
-            };
-            const res = await fetch(`${BASE_URL}/login`,{
-                method: "POST" ,
-                body: JSON.stringify(User),
-            }) ; 
-            const data = await res.json() ; 
+        if(isSubmited!==2) return ;
+        navigate("/mainpage") ; 
+    } , [isSubmited, navigate]);
 
-
-            //cases : 
-            // 1) user name not found 
-            // 2) password entered not match with user name password 
-            // 3) successful login and enter to main page             
-        }
-        fetchDatalogin() ; 
-    } , [isSubmited , password , username , navigate]) 
-
+    
     // when user submited
     function handleSubmit(e){
         e.preventDefault() ; 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './SearchResult.module.css' ; 
-function Trow({children , instanceName}){
+function Trow({children , instanceName , instance}){
     const [show,setShow] = useState(false) ; 
   return (
     <>
@@ -20,7 +20,15 @@ function Trow({children , instanceName}){
             <th colSpan="3">Region</th>
             <th colSpan="3">Price</th>
           </tr>
-          <tr className={styles.detailRow}>
+
+          {
+            <tr className={styles.detailRow}>
+              <td colSpan="3">{instance.region.regionLongName}</td>
+              <td colSpan="3">{instance.pricePerHour}</td>
+            </tr>
+          }
+          
+          {/* <tr className={styles.detailRow}>
             <td colSpan="3">region1</td>
             <td colSpan="3">price1</td>
           </tr>
@@ -31,7 +39,7 @@ function Trow({children , instanceName}){
           <tr className={styles.detailRow}>
             <td colSpan="3">region3</td>
             <td colSpan="3">price3</td>
-          </tr>
+          </tr> */}
         </>
       }
     </>
