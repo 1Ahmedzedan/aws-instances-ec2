@@ -2,7 +2,7 @@
     text-align: center;
     border-collapse: collapse;
     width: 100%;
-    color: black !important;
+    color: black !important ;
 }
 
 .mainTable .mainRow:nth-child(odd){
@@ -14,7 +14,7 @@
 }
 
 .mainRow th{
-    background: hsl(215, 100%, 25%) !important;
+    background: hsl(215, 100%, 25%) !important ;
     color : white ;     
 }
 
@@ -29,7 +29,7 @@
     height: 16px;
 }
 
-/* ================================================= */
+/*=================================================*/
 .head{
     width:100% ;
     display: flex;

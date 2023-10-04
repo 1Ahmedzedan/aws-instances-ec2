@@ -76,7 +76,7 @@ function LoginForm(){
 
     useEffect(function(){
         if(isSubmited!==2) return ;
-        navigate("/mainpage") ; 
+        // navigate("/mainpage") ; 
     } , [isSubmited, navigate]);
 
     

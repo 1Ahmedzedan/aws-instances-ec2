@@ -5,7 +5,7 @@ import { useApp } from '../context/AppProvider';
 
 
 function SearchForm({setSearchResult}){
-  const {BASE_URL} = useApp() ; 
+  const {BASE_URL , setMsg , DEFAULT_MESSAGE , setIsLoading} = useApp() ; 
   const [regionName , setRegionName] = useState("") ;
   const [cpu , setCpu] = useState(0) ;
   const [osName , setOsName] = useState("") ;
@@ -19,16 +19,24 @@ function SearchForm({setSearchResult}){
     if(!search) return ; 
 
     async function fetchSearch(){
-      const res = await fetch(`${BASE_URL}/search?cpu=${cpu}&osName=${osName}&regionName=${regionName}`,{
-        method: "POST"
-      }); 
-
-      const data = await res.json() ;
-      console.log(data) ; 
-      setSearchResult(data) ;  
+      try{
+        setIsLoading(true) ; 
+        const res = await fetch(`${BASE_URL}/search?cpu=${cpu}&osName=${osName}&regionName=${regionName}`,{
+          method: "POST"
+        }); 
+  
+        const data = await res.json() ;
+        setSearchResult(data) ;  
+      }
+      catch(e){
+        setMsg("❌ Can't fetch data from REST API !") ;
+      }
+      finally{
+        setIsLoading(false) ; 
+      }
     }
     fetchSearch() ; 
-  },[search, cpu, osName, regionName, setSearchResult, BASE_URL])
+  },[search, cpu, osName, regionName, setSearchResult, BASE_URL, setIsLoading, setMsg])
 
 
 
@@ -36,27 +44,26 @@ function SearchForm({setSearchResult}){
   useEffect(function(){
     if(regions.length !==0 || cpuSelection.length !==0 || OS.length !==0) return ;
 
-    async function fetchRegions(){
-      const res = await fetch(`${BASE_URL}/regions`) ; 
-      const data = await res.json() ; 
-      setRegions(data) ;  
-    }
-    async function fetchCpu(){
-      const res = await fetch(`${BASE_URL}/cpu`) ; 
-      const data = await res.json() ; 
-      setCpuSelection(data) ; 
+    async function fetchData(setFunction , endPoint){
+      try{ 
+        setIsLoading(true) ;  
+        const res = await fetch(`${BASE_URL}/${endPoint}`) ; 
+        const data = await res.json() ; 
+        setFunction(data) ; 
+        setMsg(DEFAULT_MESSAGE) ; 
+      }
+      catch(e){
+        setMsg("❌ Can't fetch data from REST API !") ; 
+      }
+      finally{
+        setIsLoading(false) ; 
+      }
     }
 
-    async function fetchOS(){
-      const res = await fetch(`${BASE_URL}/operating-systems`) ; 
-      const data = await res.json() ; 
-      setOS(data) ; 
-    }
-
-    fetchRegions (); 
-    fetchCpu() ; 
-    fetchOS() ; 
-  },[BASE_URL, OS, cpuSelection, regions]);
+    fetchData (setRegions , "regions"); 
+    fetchData(setCpuSelection , "cpu") ; 
+    fetchData(setOS , "operating-systems") ; 
+  },[BASE_URL, DEFAULT_MESSAGE, OS, cpuSelection, regions, setIsLoading, setMsg]);
 
 
   function handleSubmit(e){

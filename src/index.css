@@ -4,15 +4,19 @@
   --text-color: black ; 
 }
 
+
 [data-theme="dark"]{
   --bg-color: #282c34;
   --btn-color: #00347D ; 
   --text-color: white ;
 }
 
+
 *{
   margin: 0;
 }
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

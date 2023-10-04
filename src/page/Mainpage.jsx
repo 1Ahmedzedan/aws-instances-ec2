@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button.jsx';
 import SearchForm from '../components/SearchForm.jsx' ;
 import DarkMode from '../components/DarkMode';
+import Spinner from '../components/Spinner' ; 
 import { useApp } from '../context/AppProvider';
 
 
@@ -53,7 +54,7 @@ const intialState={
 
 
 function Mainpage(){
-  const {dark} = useApp() ; 
+  const {dark , msg , isLoading} = useApp() ; 
   const [state , dispatch] = useReducer(reducer , intialState) ; 
   const [searchResult , setSearchResult] = useState([]) ; 
   return (
@@ -65,7 +66,8 @@ function Mainpage(){
           <Link to="/"><Button>Log out</Button></Link>
           <DarkMode/> 
         </Header>
-        {searchResult.length === 0 && <div  className={styles.msg}> <p>😊 start by searching for an instance.</p> </div>}
+        {searchResult.length === 0 && !isLoading && <div  className={styles.msg}> <p>{msg}</p> </div>}
+        {isLoading &&  <div  className={styles.msg}><Spinner/></div>}
         {searchResult.length !== 0 && <Filter  handleFilter={dispatch} filterValue={state}/> }
       </div>
       <SearchResult filterValue={state} searchResult={searchResult}/>
