@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import SearchForm from "../components/SearchForm";
 
 test("render select in search form", () => {
-  render(<SearchForm />);
+  render(<SearchForm setSearchResult={[]}/>);
 
   const selectRegion = screen.getByTestId("select region");
   const selectCpu = screen.getByTestId("select Cpu");
