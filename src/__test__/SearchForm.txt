@@ -1,0 +1,16 @@
+// import { render, screen } from "@testing-library/react";
+// import SearchForm from "../components/SearchForm";
+
+// test("render select in search form", () => {
+//   render(<SearchForm setSearchResult={[]}/>);
+
+//   const selectRegion = screen.getByTestId("selectRegion");
+//   const selectCpu = screen.getByTestId("selectCpu");
+//   const selectOs = screen.getByTestId("selectOs");
+//   const buttonSearch = screen.getByRole("button", { name: "SEARCH" });
+
+//   expect(selectRegion).toBeInTheDocument();
+//   expect(selectCpu).toBeInTheDocument();
+//   expect(selectOs).toBeInTheDocument();
+//   expect(buttonSearch).toBeInTheDocument();
+// });

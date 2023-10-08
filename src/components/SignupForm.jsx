@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const PASSWORD_REGULAR_EXPRESSION = /^(?=.*[a-zA-Z])[A-Za-z\d0-9]{8,20}/ ;
 const EMAIL_REGULAR_EXPRESSION = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/ ;
-const BASE_URL = "51.20.78.156" ; 
 
 function SignupForm() {
 
@@ -150,7 +149,7 @@ function SignupForm() {
       
       <form onSubmit={(e)=>handleFormSubmit(e)}>
 
-        {/* <div>
+        <div>
           <label htmlFor="userName">Username</label>
           <div className={styles.input}>
             <input
@@ -170,7 +169,7 @@ function SignupForm() {
                 </>
             }
           </div>
-        </div> */}
+        </div>
 
         <div>
           <label htmlFor="email">Email</label>

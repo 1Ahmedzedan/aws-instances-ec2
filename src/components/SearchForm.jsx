@@ -79,7 +79,7 @@ function SearchForm({setSearchResult}){
           name="region"
           id="region"
           defaultValue="default"
-          data-testid="select region"
+          data-testid="selectRegion"
           onChange={(e) => setRegionName(e.target.value)}
         >
 
@@ -93,7 +93,7 @@ function SearchForm({setSearchResult}){
           name="cpu"
           id="cpu"
           defaultValue="default"
-          data-testid="select Cpu"
+          data-testid="selectCpu"
           onChange={(e) => setCpu(e.target.value)}
         >
           <option hidden value="default">
@@ -106,7 +106,7 @@ function SearchForm({setSearchResult}){
           name="os"
           id="os"
           defaultValue="default"
-          data-testid="select Os"
+          data-testid="selectOs"
           onChange={(e) => setOsName(e.target.value)}
         >
 
